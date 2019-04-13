@@ -50,6 +50,8 @@ GEM
     annotate (2.7.4)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
+    apipie-rails (0.5.15)
+      rails (>= 4.1)
     arel (9.0.0)
     ast (2.4.0)
     bootsnap (1.3.2)
@@ -212,6 +214,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   annotate
+  apipie-rails
   bootsnap (>= 1.1.0)
   byebug
   database_cleaner

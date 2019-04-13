@@ -11,6 +11,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'search_object'
 gem 'search_object_graphql'
 
+gem 'apipie-rails'
+
 group :development, :test do
   gem 'faker'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
