@@ -2,4 +2,5 @@
 .byebug_history
 /config/database.yml
 /coverage/*
+.env
 /log/*

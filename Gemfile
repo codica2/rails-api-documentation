@@ -10,7 +10,7 @@ gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'search_object'
 gem 'search_object_graphql'
-
+gem 'dotenv-rails'
 gem 'apipie-rails'
 
 group :development, :test do
@@ -19,9 +19,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'apiaryio', '~> 0.12.0'
+  gem 'rspec_api_documentation'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -43,4 +45,5 @@ group :test do
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
+  gem 'dox', require: false
 end

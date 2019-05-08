@@ -9,9 +9,13 @@ module Api
       before_action :set_book, only: %i[show update destroy]
 
       def_param_group :book do
-        param :id, :number, desc: 'Id of book', required: true
-        param 'book[title]', String, desc: 'Title of book', required: true, only_in: :request
-        param 'book[description]', String, desc: 'Description of book', only_in: :request
+        param :id, :number, desc: 'Id of book'
+        param :book, Hash do
+          param :title, String, required: true, desc: 'Title of book', only_in: :request
+          param :description, String, desc: 'Description of book', only_in: :request
+        end
+        # param 'book[title]', String, desc: 'Title of book', required: true, only_in: :request
+        # param 'book[description]', String, desc: 'Description of book', only_in: :request
         property :title, String,   desc: 'Title of book'
         property :descriprion, String,   desc: 'Description of book'
         property :created_at, String,   desc: 'Date of book creation'
@@ -40,7 +44,7 @@ module Api
       def create
         book = Book.new(book_params)
         if book.save
-          render json: book, status: :created
+          render json: book, status: :ok
         else
           render json: book.errors, status: :unprocessable_entity
         end
@@ -63,6 +67,7 @@ module Api
       param :id, :number, desc: 'Id of the book', required: true
       def destroy
         @book.destroy
+        render json: @book, status: :ok
       end
 
       private
