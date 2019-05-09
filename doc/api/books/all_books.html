@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Books API</h1>
+
+      <div class="article">
+        <h2>all books</h2>
+        <h3>GET /api/v1/books</h3>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /api/v1/books</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+ETag: W/&quot;988d351d0aeb6e3e9b81ba08e9988c09&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: c2f14935-90a6-46f0-a59d-512e725a9274
+X-Runtime: 0.040725
+Content-Length: 1477</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">[
+  {
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;To Sail Beyond the Sunset&quot;,
+    &quot;description&quot;: &quot;No statement can catch the ChuckNorrisException.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  },
+  {
+    &quot;id&quot;: 2,
+    &quot;title&quot;: &quot;Beneath the Bleeding&quot;,
+    &quot;description&quot;: &quot;Chuck Norris doesn&#39;t believe in floating point numbers because they can&#39;t be typed on his binary keyboard.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  },
+  {
+    &quot;id&quot;: 3,
+    &quot;title&quot;: &quot;A Catskill Eagle&quot;,
+    &quot;description&quot;: &quot;Chuck Norris is immutable. If something&#39;s going to change, it&#39;s going to have to be the rest of the universe.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  },
+  {
+    &quot;id&quot;: 4,
+    &quot;title&quot;: &quot;The Cricket on the Hearth&quot;,
+    &quot;description&quot;: &quot;Chuck Norris doesn&#39;t need an OS.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  },
+  {
+    &quot;id&quot;: 5,
+    &quot;title&quot;: &quot;The Wind&#39;s Twelve Quarters&quot;,
+    &quot;description&quot;: &quot;Chuck Norris doesn&#39;t need the cloud to scale his applications, he uses his laptop.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  },
+  {
+    &quot;id&quot;: 6,
+    &quot;title&quot;: &quot;I Know Why the Caged Bird Sings&quot;,
+    &quot;description&quot;: &quot;There is no need to try catching Chuck Norris&#39; exceptions for recovery; every single throw he does is fatal.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  },
+  {
+    &quot;id&quot;: 7,
+    &quot;title&quot;: &quot;Brandy of the Damned&quot;,
+    &quot;description&quot;: &quot;You don&#39;t disable the Chuck Norris plug-in, it disables you.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  },
+  {
+    &quot;id&quot;: 8,
+    &quot;title&quot;: &quot;The Other Side of Silence&quot;,
+    &quot;description&quot;: &quot;When Chuck Norris gives a method an argument, the method loses.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  },
+  {
+    &quot;id&quot;: 9,
+    &quot;title&quot;: &quot;The Widening Gyre&quot;,
+    &quot;description&quot;: &quot;Chuck Norris can recite π. Backwards.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  },
+  {
+    &quot;id&quot;: 10,
+    &quot;title&quot;: &quot;Eyeless in Gaza&quot;,
+    &quot;description&quot;: &quot;Chuck Norris is immutable. If something&#39;s going to change, it&#39;s going to have to be the rest of the universe.&quot;,
+    &quot;authors&quot;: [
+
+    ]
+  }
+]</pre>
+      </div>
+    </div>
+  </body>
+</html>

@@ -14,12 +14,10 @@ module Api
           param :title, String, required: true, desc: 'Title of book', only_in: :request
           param :description, String, desc: 'Description of book', only_in: :request
         end
-        # param 'book[title]', String, desc: 'Title of book', required: true, only_in: :request
-        # param 'book[description]', String, desc: 'Description of book', only_in: :request
         property :title, String,   desc: 'Title of book'
         property :descriprion, String,   desc: 'Description of book'
-        property :created_at, String,   desc: 'Date of book creation'
-        property :updated_at, String,   desc: 'Date of book update'
+        property :created_at, String,   desc: 'Date of the book creation'
+        property :updated_at, String,   desc: 'Last time the book was updated'
       end
 
       api :GET, '/books/', 'Shows all books'
@@ -27,6 +25,19 @@ module Api
       def index
         books = Book.all
         render json: books
+      end
+
+      api :POST, '/books/', 'Create a new book'
+      returns :book, code: 200, desc: 'Created book'
+      param_group :book
+
+      def create
+        book = Book.new(book_params)
+        if Book.new(book_params).save
+          render json: book, status: :ok
+        else
+          render json: book.errors, status: :unprocessable_entity
+        end
       end
 
       api :GET, '/books/:id', 'Shows the requested book'
@@ -37,18 +48,6 @@ module Api
         render json: @book
       end
 
-      api :POST, '/books/', 'Create a new book'
-      returns :book, code: 200, desc: 'Created book'
-      param_group :book
-
-      def create
-        book = Book.new(book_params)
-        if book.save
-          render json: book, status: :ok
-        else
-          render json: book.errors, status: :unprocessable_entity
-        end
-      end
 
       api :PUT, '/books/:id', 'Updates the requested book'
       param_group :book
