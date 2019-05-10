@@ -1,7 +1,11 @@
 
 # API documentation  
 This is the example of how to generate the API documentation in your rails app.  
-  
+
+<p align="center">
+	<img src="public/images/api.jpg">  
+</p>
+
 This application is using the next gems:
 * [Apipie](https://github.com/Apipie/apipie-rails)
 * [Dox](https://github.com/infinum/dox)
