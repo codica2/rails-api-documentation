@@ -234,7 +234,7 @@ To use apiary, you need to install [apiary gem](https://github.com/apiaryio/apia
 ```ruby
 # Gemfile
 
-gem 'apiary-client'
+gem 'apiaryio', '~> 0.12.0'
 ```
 Sign up for [apiary.io](https://apiary.io/) and get your token on API key on [this page](https://login.apiary.io/tokens)
 
