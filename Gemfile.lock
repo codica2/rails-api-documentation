@@ -145,7 +145,7 @@ GEM
       ast (~> 2.4.0)
     pg (1.1.4)
     public_suffix (3.0.3)
-    puma (3.12.1)
+    puma (3.12.3)
     rack (2.0.7)
     rack-cors (1.0.3)
     rack-test (1.1.0)
@@ -272,7 +272,7 @@ DEPENDENCIES
   listen
   overcommit
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 3.12)
   rack-cors
   rails (~> 5.2.1, >= 5.2.1.1)
   rspec-rails
